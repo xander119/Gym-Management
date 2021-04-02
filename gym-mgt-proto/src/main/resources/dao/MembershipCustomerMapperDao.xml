@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gym.mgt.gymmgtproto.dao.MembershipCustomerMapperDao">
+    <insert id="insertMembership" parameterType="cn.gym.mgt.gymmgtproto.mbg.model.Membership" useGeneratedKeys="true" keyProperty="membership_id">
+        insert into membership (membership_id, membership_type_id, start_date,
+                                end_date, membership_product)
+        values (#{membershipId,jdbcType=BIGINT}, #{membershipTypeId,jdbcType=BIGINT}, #{startDate,jdbcType=TIMESTAMP},
+                #{endDate,jdbcType=TIMESTAMP}, #{membershipProduct,jdbcType=BIGINT})
+    </insert>
+</mapper>

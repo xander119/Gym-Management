@@ -1,0 +1,18 @@
+# Maven #
+target/
+
+# IDEA #
+.idea/
+.idea/**/*.xml
+*.iml
+
+# Eclipse #
+.settings/
+.classpath
+.project
+*/.mvn/
+
+#custom
+*/mvnw
+*/mvnw.cmd
+/gym-mgt-proto/src/main/java/cn/gym/mgt/gymmgtproto/leecodeAssessment/MovingFiles.java

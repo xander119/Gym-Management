@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gym.mgt.gymmgtproto.dao.GmPermissionMapperDao">
+    <select id="getPermissionListByUserId" resultType="cn.gym.mgt.gymmgtproto.mbg.model.GmPermission">
+        SELECT gmp.*
+        from gm_permission as gmp
+                 left join security_user_permission sup on gmp.permission_id = sup.permission_id
+                 left join security_user su on su.security_user_id = sup.security_user_id
+        where su.security_user_id = #{securityUserId}
+    </select>
+</mapper>

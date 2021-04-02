@@ -1,0 +1,150 @@
+SecurityUser:
+    security_user_id
+    username
+    password
+    email
+    DOB
+    phone
+    gender: StaticData 'Gender'
+    roles: role MTM
+
+role
+    role_id
+    name
+    role_type StaticData 'SecurityRole'
+
+security_user_role:
+    security_user_role_id
+    role_id
+    security_user_id
+
+Product:
+    product_id
+    name
+    type: StaticData 'ProductType'
+    cost
+
+Customer :
+    customer_id
+    name
+    securityUser: SecurityUser
+    membership: Membership OTM
+
+customer_membership
+    customer_membership_id
+    customer_id
+    membership_id
+
+
+Customer_finance:
+    customer_finance_id
+    product: Product
+    totalCost
+    paymentDate
+
+Membership
+    membership_id
+    startDate
+    endDate
+    product: Product OTO
+    type: StaticData 'MembershipType' OTO
+
+Trainer
+    trainer_id
+    name
+    experience: in number of years
+    specialties: Skill OTM
+
+trainer_skill
+    trainer_skill_id
+    trainer_id
+    skill_id
+
+Skill
+    skill_id
+    name
+    code
+    type: StaticData 'SkillType' MTM
+
+skill_static_data
+    skill_static_data_id
+    skill_id
+    static_data_id
+
+
+Class
+    class_id
+    name
+    requiredSkill: Skill OTM
+    startTime
+    endTime
+    date
+    capacity
+    classType: StaticData 'ClassType'
+    trainer: Trainer OTM
+
+class_trainer
+    class_trainer_id
+    class_id
+    trainer_id
+
+Attendance
+    attendance_id
+    class: Class OTO
+    trainer: Trainer OTM
+    attendant: Customer OTM
+    absence: Customer OTM
+    date
+
+attendance_class
+    attendance_class_id
+    attendance_id
+    class_id
+
+attendance_trainer
+    attendance_trainer_id
+    attendance_id
+    trainer_id
+
+attendance_attendant
+    attendance_attendant_id
+    attendance_id
+    attendant_id
+
+attendance_absence
+    attendance_absence_id
+    attendance_id
+    absence_id
+
+
+StaticData:
+    code
+    name
+    typeCode
+    active
+    description
+
+---------------------------------------------------------------------Data---------------------------------------------------------------------
+insert into static_data (code, name, type_code, active, description) VALUES ('MALE', 'Male', 'Gender', true, 'gender');
+insert into static_data (code, name, type_code, active, description) VALUES ('FEMALE', 'Female', 'Gender', true, 'gender');
+
+insert into static_data (code, name, type_code, active, description) VALUES ('ADMIN', 'Admin', 'SecurityRole', true, 'Security Role');
+insert into static_data (code, name, type_code, active, description) VALUES ('MANAGER', 'Manager', 'SecurityRole', true, 'Security Role');
+insert into static_data (code, name, type_code, active, description) VALUES ('CUSTOMER', 'Customer', 'SecurityRole', true, 'Security Role');
+
+insert into static_data (code, name, type_code, active, description) VALUES ('null1', 'null1', 'ProductType', true, 'Product Type');
+insert into static_data (code, name, type_code, active, description) VALUES ('null2', 'null2', 'ProductType', true, 'Product Type');
+insert into static_data (code, name, type_code, active, description) VALUES ('null3', 'null3', 'ProductType', true, 'Product Type');
+
+insert into static_data (code, name, type_code, active, description) VALUES ('AllAccess', 'All Access', 'MembershipType', true, 'Membership Type');
+insert into static_data (code, name, type_code, active, description) VALUES ('GymOnly', 'Gym Only', 'MembershipType', true, 'Membership Type');
+insert into static_data (code, name, type_code, active, description) VALUES ('PoolOnly', 'Pool Only', 'MembershipType', true, 'Membership Type');
+insert into static_data (code, name, type_code, active, description) VALUES ('ClassOnly', 'Class Only', 'MembershipType', true, 'Membership Type');
+
+insert into static_data (code, name, type_code, active, description) VALUES ('瑜伽', '瑜伽', 'SkillType', true, 'Skill Type');
+insert into static_data (code, name, type_code, active, description) VALUES ('普拉提', '普拉提', 'SkillType', true, 'Skill Type');
+insert into static_data (code, name, type_code, active, description) VALUES ('力量训练', '力量训练', 'SkillType', true, 'Skill Type');
+
+insert into static_data (code, name, type_code, active, description) VALUES ('例子', '例子', 'ClassType', true, 'Class Type');
+
+
