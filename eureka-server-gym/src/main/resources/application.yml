@@ -11,3 +11,4 @@ eureka:
     register-with-eureka: false #指定是否要注册到注册中心（注册中心不需要开启）
   server:
     enable-self-preservation: false #关闭保护模式
+    eviction-interval-timer-in-ms: 5000

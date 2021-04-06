@@ -8,4 +8,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://zwang:123456@localhost:8004/eureka/ #同时注册到两个注册中心
+      defaultZone: http://first:8002/eureka/,http://second:8003/eureka/ #同时注册到两个注册中心

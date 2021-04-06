@@ -5,9 +5,9 @@ spring:
     name: eureka-server
 eureka:
   instance:
-    hostname: first
+    hostname: replica1
   client:
     serviceUrl:
-      defaultZone: http://second:8003/eureka/ #注册到另一个Eureka注册中心
+      defaultZone: http://replica2:8003/eureka/ #注册到另一个Eureka注册中心
     fetch-registry: true
     register-with-eureka: true
