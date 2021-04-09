@@ -1,0 +1,42 @@
+<!--<mat-menu #appMenu="matMenu">
+  <button mat-menu-item>首页</button>
+  <button mat-menu-item>产品课程</button>
+  <button mat-menu-item>最新新闻</button>
+  <button mat-menu-item>地址</button>
+  <button mat-menu-item>联系我们</button>
+  <button mat-menu-item>加入我们</button>
+</mat-menu>
+<button mat-icon-button [matMenuTriggerFor]="appMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>-->
+<div>
+
+  <mat-toolbar [color]="'primary'">
+    <span style="padding-left: 3em;">欧泉健身</span>
+    <mat-grid-list [cols]="6" [rowHeight]="'200px'" class="top-nav-bar">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button [routerLink]="'welcome'" mat-button [type]="'primary'" >首页</button>
+      </mat-grid-tile>
+      <mat-grid-tile  [colspan]="1" [rowspan]="1">
+        <button mat-button [type]="'primary'">产品课程</button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-button [type]="'primary'">最新新闻</button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-button [type]="'primary'">地址</button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-button [type]="'primary'">联系我们</button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-button [type]="'primary'">加入我们</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-toolbar>
+
+  <div class="main-page-container">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
