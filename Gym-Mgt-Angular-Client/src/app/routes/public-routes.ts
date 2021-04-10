@@ -1,8 +1,8 @@
 import {Routes} from "@angular/router";
 import {GymManagementWelcomeComponent} from "../public/gym-management-welcome/gym-management-welcome.component";
-import {GymWelcome1Component} from "../public/gym-welcome1/gym-welcome1.component";
+import { StaticDataManagementComponent } from "../public/static-data-management/static-data-management.component";
 
 export const publicRoutes: Routes = [
   {path: 'welcome', component: GymManagementWelcomeComponent},
-  {path: 'welcome1', component: GymWelcome1Component}
+  {path: 'staticData', component: StaticDataManagementComponent}
 ];

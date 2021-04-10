@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GymWelcome1Component } from './gym-welcome1.component';
+import { ProductScreenComponent } from './product-screen.component';
 
-describe('GymWelcome1Component', () => {
-  let component: GymWelcome1Component;
-  let fixture: ComponentFixture<GymWelcome1Component>;
+describe('ProductScreenComponent', () => {
+  let component: ProductScreenComponent;
+  let fixture: ComponentFixture<ProductScreenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GymWelcome1Component ]
+      declarations: [ ProductScreenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GymWelcome1Component);
+    fixture = TestBed.createComponent(ProductScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

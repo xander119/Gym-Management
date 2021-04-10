@@ -13,7 +13,7 @@
 
   <mat-toolbar [color]="'primary'">
     <span style="padding-left: 3em;">欧泉健身</span>
-    <mat-grid-list [cols]="6" [rowHeight]="'200px'" class="top-nav-bar">
+    <mat-grid-list [cols]="7" [rowHeight]="'200px'" class="top-nav-bar">
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <button [routerLink]="'welcome'" mat-button [type]="'primary'" >首页</button>
       </mat-grid-tile>
@@ -31,6 +31,9 @@
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <button mat-button [type]="'primary'">加入我们</button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-button [routerLink]="['/staticData']" routerLinkActive="router-link-active"  [type]="'primary'">常量管理</button>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-toolbar>
